@@ -1,0 +1,31 @@
+import random
+
+print("\nAre you LUCKY?? \n---Number Guessing Game as per your WISHING Range---")
+print("Maximum tries = 10 | 0 to EXIT---")
+
+name = input("\nEnter Name: ")
+
+x = int(input("\nStarting No: "))
+y = int(input("Ending NO: "))
+print("")
+
+secret = random.randint(x,y)
+
+attempt = 0
+tries = 0
+
+while attempt != secret:
+    attempt = int(input(f"Guess btw {x} to {y} : "))
+    tries += 1
+
+    if attempt == 0:
+        print("\nTHE OVER!!")
+        break
+
+    if tries > 10:
+        print("\nYour 10 tries are OVER! \nBetter LUCK next Time!!")
+        break
+
+else:
+    print("\nYou are today's LUCKY Winner: ", name, "\nNumber = ", secret,"\nattempts = ", tries)
+
